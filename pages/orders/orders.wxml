@@ -1,0 +1,56 @@
+<view class="container">
+  <view class='section_menu' hidden="{{hidden}}">
+    <view class='menu_item'>
+      <view class="{{_num == 1?'isChecked':'normal'}}" data-num="1" bindtap="changeChecked" id='1' data-state='0'>待付款</view>
+    </view>
+    <view class='border'></view>
+
+    <view class='menu_item'>
+      <view class="{{_num == 2?'isChecked':'normal'}}" data-num="2" bindtap="changeChecked" id='2' data-state='1'>已付款</view>
+    </view>
+    <view class='border'></view>
+    <view class='menu_item'>
+      <view class="{{_num == 3?'isChecked':'normal'}}" data-num="3" bindtap="changeChecked" id='3' data-state='2'>已完成</view>
+    </view>
+  </view>
+  <view class='nothing' hidden="{{!hideFlag}}">
+    <view class='img'>
+    <image src='../../images/icon_none.png'></image>
+    </view>
+    <text>暂无此类订单哦~</text>
+  </view>
+
+
+
+  <view class='main' hidden="{{hideFlag}}">
+  <view class='content' wx:for="{{orderDatas}}">
+      <view class='order_item' bindtap='jumpToPay' data-state="{{item.state}}" data-id='{{item.id}}' data-price='{{item.price}}'>
+        <view class='item_time'>
+          <image src='../../images/icon_time2.png'></image>
+          <text>{{item.time}}</text>
+        </view>
+        <view class='item_body'>
+          <view class='item_img'>
+            <image src="{{item.route_thum}}"></image>
+          </view>
+          <view class='item_content'>
+            <view class='item_title'>{{item.route_name}}(7日)</view>
+            <view class='item_ntitle item_date'>出发日期：{{item.date}}</view>
+            <view class='item_ntitle item_num'>人数：{{item.num}}人</view>
+            <view class='item_ntitle item_price item_nums'>x {{item.num}}</view>
+            <view class='item_ntitle item_price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='line'></view>
+        <view class='item_time item_total'>
+          <text>共 {{item.num}} 件商品</text>
+          <text>丨</text>
+          <text>合计：￥{{item.total}}</text>
+        </view>
+      </view>
+
+
+
+  </view>
+  </view>
+</view>

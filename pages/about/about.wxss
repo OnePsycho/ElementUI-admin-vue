@@ -1,0 +1,15 @@
+/* pages/about/about.wxss */
+.container{
+  padding: 40px 2%;
+  text-align: center;  
+}
+.container image{
+  width: 360px;
+  height: 360px;
+}
+.container text{
+  font-size: 16px;
+  line-height: 30px;
+  color: #cf3221;
+  font-weight: 500;
+}

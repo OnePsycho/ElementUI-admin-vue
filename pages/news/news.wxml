@@ -1,0 +1,47 @@
+<!--pages/news/news.wxml-->
+<view class='container'>
+
+  <view class='nothing' hidden="{{!hideFlag}}">
+    <view class='img'>
+    <image src='../../images/icon_none.png'></image>
+    </view>
+    <text>暂无新消息</text>
+  </view>
+
+  <view class='content' hidden="{{hideFlag}}">
+
+
+    <view class='news_item' >
+      <view class='news_img'>
+        <image src='../../images/logo.png'></image>
+      </view>
+      <view class='news_content'>
+        <view class='news_title'>
+          <view class='title'>
+            <text class='title_text'>想旅行系统提示</text>
+            <view class='news_time'>14:36</view>
+          </view>
+          <text class='ntitle'>付款成功！祝您旅行愉快！点击查看>></text>
+        </view>
+      </view>
+    </view>
+
+    <view class='news_item'>
+      <view class='news_img'>
+        <image src='../../images/logo.png'></image>
+      </view>
+      <view class='news_content'>
+        <view class='news_title'>
+          <view class='title'>
+            <text class='title_text'>想旅行系统提示</text>
+            <view class='news_time read'>05-26</view>
+          </view>
+          <text class='ntitle'>付款成功！祝您旅行愉快！点击查看>></text>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+</view>

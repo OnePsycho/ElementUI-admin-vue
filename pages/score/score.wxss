@@ -1,0 +1,11 @@
+/* pages/score/score.wxss */
+page{
+  background: rgba(243,246,247,1);
+}
+.container{
+  padding: 90px 0px;
+}
+.container image{
+  height: 100px;
+  width: 150px;
+}

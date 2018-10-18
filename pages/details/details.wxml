@@ -1,0 +1,184 @@
+<view class="container">
+
+  <!-- 第一部分-轮播图部分 -->
+  <view class='section1'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{swiperWidth}}px;">
+      <block wx:for="{{urlDatas}}">
+        <swiper-item>
+          <image src="{{item.route_slide_a}}" class="slide-image" id='{{item.id}}' bindtap='preSlideImage' data-a='{{item.route_slide_a}}' data-b='{{item.route_slide_b}}' data-c='{{item.route_slide_c}}' data-d='{{item.route_slide_d}}' data-index='0'/>
+        </swiper-item>
+        <swiper-item>
+          <image src="{{item.route_slide_b}}" class="slide-image" id='{{item.id}}' bindtap='preSlideImage' data-a='{{item.route_slide_a}}' data-b='{{item.route_slide_b}}' data-c='{{item.route_slide_c}}' data-d='{{item.route_slide_d}}' data-index='1'/>
+        </swiper-item>
+        <swiper-item>
+          <image src="{{item.route_slide_c}}" class="slide-image" id='{{item.id}}' bindtap='preSlideImage' data-a='{{item.route_slide_a}}' data-b='{{item.route_slide_b}}' data-c='{{item.route_slide_c}}' data-d='{{item.route_slide_d}}' data-index='2'/>
+        </swiper-item>
+        <swiper-item>
+          <image src="{{item.route_slide_d}}" class="slide-image" id='{{item.id}}' bindtap='preSlideImage' data-a='{{item.route_slide_a}}' data-b='{{item.route_slide_b}}' data-c='{{item.route_slide_c}}' data-d='{{item.route_slide_d}}' data-index='3'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 第二部分-主要信息部分 -->
+  <view class='section2' wx:for="{{urlDatas}}">
+    <view class='title'>{{item.route_name}}</view>
+    <view class='price'>￥{{item.route_price}}</view>
+    <image src="{{liked?'../../images/icon_fived.png':'../../images/icon_five.png'}}" class='like' bindtap='changeLike' data-route_id='{{item.id}}' data-name='{{item.route_name}}' data-img='{{item.route_img_sample}}' data-summary='{{item.route_summary}}'></image>
+    <image src="../../images/icon_share.png" class='like share' bindtap='showSheet'></image>
+    <view class='line'></view>
+    <view class='extra'>
+      <text class='yunfei'>运费：免运费</text>
+      <text class='count'>剩余：{{item.route_count}}件</text>
+      <text class='sale'>销量：{{item.route_sales}}</text>
+    </view>
+  </view>
+
+  <!-- 第三部分-选择部分 -->
+  <view class='section3' bindtap='showOverlay'>
+    <view>选择:出行日期、规格</view>
+    <image src='../../images/icon_arrow.png'></image>
+  </view>
+
+
+  <!-- 第四部分-详情部分 -->
+  <view class='section4'>
+    <view class='menu'>
+      <view class='menu_item'>
+        <view class="{{_num == 1?'isChecked':'normal'}}" data-num="1" bindtap="changeChecked" id='apple'>商品详情</view>
+      </view>
+      <!-- <view class='menu_item'>
+        <view class="{{_num == 2?'isChecked':'normal'}}" data-num="2" bindtap="changeChecked" id='apple'>交易记录</view>
+      </view> -->
+    </view>
+    <view class='content' wx:for="{{urlDatas}}">
+    <image src='https://scwxlx.com/gif.gif' class='gif'></image>
+    <image src="{{item.route_img_details}}" class='detailsImg' mode='widthFix'  bindload='imageLoad'></image>
+    </view>
+  </view>
+
+
+   <!-- 第五部分-footer操作部分 -->
+  <view class='footer'>
+  <view class='box1' bindtap='chooseKefu'>
+  <image src='../../images/kefu.png'></image>
+  <text>客服</text>
+  </view>
+  <view class='box2' bindtap='jumpToCarts'>
+  <image src='../../images/cart.png'></image>
+  <text>购物车</text></view>
+  <view class='box3' >
+  <view class='box3_a' bindtap='showOverlay' data-type='a'>加入购物车</view>
+  <view class='box3_b' bindtap='showOverlay' data-type='b'>立即购买</view>
+  </view>
+  </view>
+
+   <!-- 第六部分-overlay部分 -->
+
+   <view hidden='{{hideFlag}}' class="overlay {{hideFlag?'':'inner ripple fadeInUp'}}">
+   <view class='overlay_content' wx:for="{{urlDatas}}">
+    <view class='overlay_1'>
+      <view class='lx_img'><image src="{{item.route_img_thumbnail}}"></image></view>
+      <view class='lx_info'>
+      <view class='lx_info_title'>{{item.route_name}}</view>
+      <view class='lx_info_price'>￥{{item.route_price}}</view>
+      </view>
+      <view class='close' bindtap='closeOverlay'>
+      <image src='../../images/icon_cancel.png'></image>
+      </view>
+    </view>
+    <view class='lx_line'></view>
+    <view class='overlay_2'>
+    <view class='date_title'>出行日期</view>
+    <view class='choose_date'>
+    <text class="date_item {{date_num == 1?'isChecked_border':'normal'}}" data-num="1" data-value="{{item.route_date_a}}" bindtap="changeChecked2">{{item.route_date_a}}</text>
+    <text class="date_item {{date_num == 2?'isChecked_border':'normal'}}" data-num="2" data-value="{{item.route_date_b}}"  bindtap="changeChecked2">{{item.route_date_b}}</text>
+    <text class="date_item {{date_num == 3?'isChecked_border':'normal'}}" data-num="3" data-value="{{item.route_date_c}}" bindtap="changeChecked2">{{item.route_date_c}}</text>
+    </view>
+    <view class='date_title'>规格</view>
+    <view class='choose_date'>
+    <text class="date_item {{price_num == 1?'isChecked_border':'normal'}}" data-num="1" bindtap="changeChecked3">订金</text>
+    </view>
+    </view>
+    <view class='lx_line'></view>
+    <view class='overlay_3'>
+    <view class='d-left'>
+    <text>购买数量：</text>
+    <text class='left_count'>剩余{{item.route_count}}件</text>
+    </view>
+    <view class='d-right'>
+    <view class='reduce' bindtap='reduceNum'>-</view>
+    <view class='num'>{{select_num}}</view>
+    <view class='add' bindtap='addNum'>+</view>
+    </view>
+    </view>
+    <view class='lx_line'></view>
+    <view class='overlay_4'>
+    <view class='input_item'>
+    <view class='input_title'>*手机号</view>
+    <input type='number' placeholder='请输入您的手机号' bindinput='getPhone' maxlength='11'></input>
+    </view>
+        <view class='input_item'>
+    <view class='input_title'>*姓名</view>
+    <input type='text' placeholder='请输入您的真实姓名' bindinput='getName'></input>
+    </view>
+        <view class='input_item'>
+    <view class='input_title'>*身份证号</view>
+    <input type='idcard' placeholder='请输入18位居民身份证号' bindinput='getId' maxlength='18'></input>
+    </view>
+            <view class="input_item {{extraHide?'ripple slideDownUp':'ripple slideInUp'}}" hidden='{{extraHide}}'>
+    <view class='input_title' >*备注信息</view>
+    <input type='text' placeholder='请填写随行人员的姓名与身份证号' bindinput='getExtra'></input>
+    </view>
+        <!-- <view class='input_item'>
+    <view class='input_title'>多人信息</view>
+    <input type='text' placeholder='如有多人，请填写其他人的身份信息'></input>
+    </view> -->
+    
+    
+    </view>
+
+    <view class='btns' >
+    <!-- <button class='btn_add_cart' bindtap='queryAciton' data-price="{{item.route_price}}" data-route_name="{{item.route_name}}" data-route_thum="{{item.route_img_thumbnail}}">加入购物车</button> -->
+    <button class='btn_buy' bindtap='queryAciton' data-price="{{item.route_price}}" data-route_name="{{item.route_name}}" data-route_thum="{{item.route_img_thumbnail}}">确认</button>
+    </view>
+   </view>
+   </view>
+
+
+<!-- 第七部分-海报部分 -->
+<view class='overlay_poster' hidden='{{posterFlag}}' wx:for="{{urlDatas}}">
+<view class='poster_body'>
+<image src='{{item.route_img_poster}}' style="height:{{imgHeight}}px;width:{{screenWidth}}px;" bindtap='previewImage' data-url='{{item.route_img_poster}}'></image>
+</view>
+<view class='btn_save' bindtap='savePoster' data-url='{{item.route_img_poster}}'>
+保存图片
+</view>
+<view class='btn_cancel' bindtap='cancelPoster'>
+取消
+</view>
+</view>
+
+<!--第八部分 客服类型选择Overlay -->
+<view class="overlay_choose {{chooseFlag?'':'ripple zoomIn'}}" hidden='{{chooseFlag}}'>
+<image src='../../images/icon_del.png' class='iconCancle' bindtap='closeChoose'></image>
+<view class='left'>
+<view class='contactButton'>
+<contact-button class="contact" type="default-light"  size="27" session-from="weapp" style="position:absolute;top:30rpx;left:80rpx;">  
+    </contact-button>  
+    <contact-button class="contact" type="default-light" size="27" session-from="weapp" style="opacity:0;position:absolute;top:50rpx;left:80rpx; ">  
+    </contact-button>  
+    <contact-button class="contact" type="default-light" size="27" session-from="weapp" style="opacity:0;position:absolute;top:60rpx;left:80rpx; ">  
+    </contact-button>  
+    <contact-button class="contact" type="default-light" size="27" session-from="weapp" style="opacity:0;position:absolute;top:70rpx;left:80rpx; ">  
+    </contact-button>  
+</view>
+<image src='../../images/icon_china.png' class='kefu'></image>
+<text>境内游咨询</text>
+</view>
+<view class='right' bindtap='jumpToErCode'>
+<image src='../../images/icon_global.png' class='kefu'></image>
+<text>境外游咨询</text>
+</view>
+</view>
+</view>

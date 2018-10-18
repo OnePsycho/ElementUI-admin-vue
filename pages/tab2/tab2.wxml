@@ -1,0 +1,34 @@
+<view class="container">
+<view class='section_menu'>
+<view class='menu_item'>
+ <view class="{{_num == 1?'isChecked':'normal'}}" data-num = "1" bindtap="changeChecked" data-type='xiang'>XIANG玩</view> 
+</view>
+ <view class='border'></view>
+
+<view class='menu_item'>
+ <view class="{{_num == 2?'isChecked':'normal'}}" data-num = "2" bindtap="changeChecked" data-type='eat'>EAT GO</view> 
+</view>
+ <view class='border'></view>
+<view class='menu_item'>
+ <view class="{{_num == 3?'isChecked':'normal'}}" data-num = "3" bindtap="changeChecked" data-type='young'>YOUNG</view> 
+</view>
+ <view class='border'></view>
+<view class='menu_item'>
+ <view class="{{_num == 4?'isChecked':'normal'}}" data-num = "4" bindtap="changeChecked" data-type='activity'>出境游</view> 
+</view>
+</view>
+
+<view class='content'>
+<view class='lists' wx:for="{{urlDatas}}">
+<navigator url='../details/details?id={{item.id}}'>
+<view class='list_item'>
+<view class='item_title'><text>{{item.route_name}}</text></view>
+<view class='item_image'><image src="{{item.route_img_sample}}" style="height:{{imgHeight}}px;"></image></view>
+<!-- <view class='item_content'><text>{{item.route_summary}}</text></view> -->
+</view>
+</navigator>
+</view>
+<view class='noDatas'>暂无更多数据了~</view>
+</view>
+
+</view>

@@ -1,0 +1,6 @@
+<view class="container">
+<image src='../../images/icon_suc.png'></image>
+<text class='t1'>付款成功！</text>
+<text class='t2'>稍后订单将以短信形式发送到您所填写的手机号上，请注意查收！</text>
+<view class='btn' bindtap='jumpToOrders'>查看订单详情</view>
+</view>

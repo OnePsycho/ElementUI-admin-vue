@@ -1,0 +1,183 @@
+page {
+  background: rgba(49, 49, 49,0.1);
+  width: 100%;
+  font-family: "微软雅黑";
+}
+
+.container {
+  padding: 0px;
+  overflow: hidden;
+  padding-bottom: 60px;
+  
+}
+
+.content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.content image{
+  width: 48px;
+  height: 48px;
+  margin: 20px;
+}
+.content text{
+  font-size: 16px;
+  color: #000;
+}
+.content button{
+  width: 200px;
+  border: 0px;
+  background:#ff0000;
+  color: white;
+  font-size: 14px;
+  margin: 20px;
+  
+}
+/* 有商品时的购物车界面 */
+.cart_content{
+  width: 100%;
+}
+.cart_item{
+  width: 100%;
+  height: 135px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+}
+.item_check{
+  height: 100%;
+  width: 10%;
+  line-height: 135px;
+  padding-left: 7px;
+}
+.item_check image{
+  width: 22px;
+  height: 22px;
+}
+.item_image{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.item_image image{
+  width: 90px;
+  height: 85px;
+  margin-top: 15px;
+}
+.item_content{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+.item_title{
+  font-size: 14px;
+  font-weight: bold;
+  width: 90%;
+}
+.item_ntitle{
+  font-size: 12px;
+  color: darkgray;
+  margin: 3px 0px;
+}
+.item_delect{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.item_person{
+  margin-top: 6px;
+}
+.item_num{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 15px;
+  justify-content: flex-end;
+}
+.select_num{
+  font-size: 14px;
+  margin: 0px 5px;
+  color: #000;
+  font-weight: bold;
+}
+.num_action{
+  height:23px;
+  width: 22px;
+}
+.num_action image{
+  width: 100%;
+  height: 100%;
+}
+.item_price{
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: bolder;
+  margin-right: 20px;
+}
+
+.cart_aciton{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+}
+.box1{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.box1 image{
+  width: 22px;
+  height: 22px;
+}
+.box1 text{
+  font-size: 14px;
+  margin-left: 5px;
+}
+.box2{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+.txt{
+  font-size: 14px;
+}
+.total_price{
+  font-size: 16px;
+  font-weight: bolder;
+  color: red;
+}
+.box3{
+  width: 40%;
+  height: 100%;
+  background: red;
+  }
+.btn_buy{
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }

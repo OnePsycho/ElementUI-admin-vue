@@ -1,0 +1,4 @@
+<view class="container">
+<image src='https://scwxlx.com/erCode.jpg' mode='widthFix' bindtap='previewImage'></image>
+<text>点击查看图片，长按识别二维码即可添加客服微信</text>
+</view>

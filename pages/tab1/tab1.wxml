@@ -1,0 +1,62 @@
+<view class="container">
+
+<!-- 第一部分-轮播图部分 -->
+  <view class='section1' style="height:{{slide_height}}px;">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{slide_height}}px;">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+            <image src="{{item.url}}?js={{Timestamp}}" class="slide-image" id='{{item.id}}' bindtap='swipeJump' bindload='imageLoad' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+<!-- 第二部分-menu部分 -->
+  <view class='section2'>
+    <view class='menu_item'>
+    <image src='https://scwxlx.com/menu2/menu1.png?js={{Timestamp}}' bindtap='jumpToRoutes' data-index='1' data-type='xiang'></image>
+    </view>
+    <view class='menu_item'>
+    <image src='https://scwxlx.com/menu2/menu2.png?js={{Timestamp}}' bindtap='jumpToRoutes' data-index='2' data-type='eat'></image>
+    </view>
+    <view class='menu_item'>
+    <image src='https://scwxlx.com/menu2/menu3.png?js={{Timestamp}}' bindtap='jumpToRoutes' data-index='3' data-type='young'></image>
+    </view>
+    <view class='menu_item'>
+    <image src='https://scwxlx.com/menu2/menu4.png?js={{Timestamp}}' bindtap='jumpToRoutes' data-index='4' data-type='activity'></image>
+    </view>
+  </view>
+
+<!-- 第三部分-列表部分 -->
+<view class='section3'>
+   <!-- <view class='header'>
+  <image src='../../images/fenping.png'> </image>
+  
+  </view>  -->
+  <!-- <view class='search_body'>
+  <navigator url='../search/search'>
+  
+  <view class='searchArea'>
+  <image src='../../images/icon_search.png'></image>
+  <input type='text' placeholder='搜索路线'></input>
+  </view>
+  </navigator>
+  
+  </view> -->
+
+
+  <view class='list' wx:for="{{sampleUrls}}">
+  <view class='list_item' style="height:{{imgHeight}}px;" bindtap='jumpToDetails' id='{{item.id}}'>
+   <image src="{{item.url}}" bindload='imageLoad'> </image>
+  </view>
+  </view>
+
+</view>
+
+<!-- 
+<view class="tools {{animated?'ripple bounceIn':''}} {{animated4?'noborder':''}}" bindtap='toolsTap'><image src="{{animated4?'../../images/icon_tools2.png':'../../images/icon_tools1.png'}}"></image></view>
+<view class="tools2 {{animated2?'show ripple bounceIn':'none'}}" bindtouchmove='handletouchmove'><image src='../../images/icon_kefu.png'></image></view>
+<view class="tools3 {{animated3?'show ripple bounceIn':'none'}}" bindtouchmove='handletouchmove'><image src='../../images/icon_tools3.png'></image></view>
+<view class="toolsbg {{animated4?'show ripple slideInRight':'none'}}"></view> -->
+
+</view>

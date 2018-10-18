@@ -1,0 +1,24 @@
+<view class="container">
+
+  <view class='nothing' hidden="{{hideFlag}}">
+    <view class='img'>
+    <image src='../../images/icon_none.png'></image>
+    </view>
+    <text>暂无收藏哦~</text>
+  </view>
+
+<view class='content' hidden="{{!hideFlag}}">
+<view class='lists' wx:for="{{urlDatas}}">
+
+<view class='list_item'>
+<image src='../../images/icon_delect.png' class='item_delect' bindtap='deleteList' data-index="{{index}}" data-id="{{item.id}}"></image>
+<view class='item_title'><text>{{item.route_name}}</text></view>
+<view class='item_image'><navigator url='../details/details?id={{item.route_id}}'><image src="{{item.route_img_sample}}" style="height:{{imgHeight}}px;"></image>
+</navigator>
+
+</view>
+<!-- <view class='item_content'><text>{{item.route_summary}}</text></view> -->
+</view>
+</view>
+</view>
+</view>

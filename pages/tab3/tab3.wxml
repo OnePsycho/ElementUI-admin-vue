@@ -1,0 +1,48 @@
+<view class="container">
+<view class='content' hidden='{{hasUser}}'>
+<image src='../../images/icon_cart.png'></image>
+<text>购物车里什么都还没有...</text>
+<button bindtap='jumpToBuy'>去逛逛</button>
+</view>
+
+<view class='cart_content' hidden='{{!hasUser}}' wx:for="{{carts}}">
+
+<view class='cart_item'>
+<view class='item_check' bindtap='selectList' data-index="{{index}}" data-dbId="{{item.id}}"><image src="{{item.selected == 1?'../../images/icon_checked.png':'../../images/icon_check.png'}}" ></image></view>
+
+<view class='item_image'><navigator url='../details/details?id={{item.route_id}}'><image src="{{item.route_thum}}"></image></navigator></view>
+
+<view class='item_content'>
+<navigator url='../details/details?id={{item.route_id}}'>
+<view class='item_title' bindtap='jumpToDetails' data-id="{{item.route_id}}">{{item.route_name}}</view>
+</navigator>
+<image src='../../images/icon_delect.png' class='item_delect' bindtap='deleteList' data-index="{{index}}" data-id="{{item.id}}"></image>
+<view class='item_ntitle item_person'>人数：{{item.num}}人</view>
+<view class='item_ntitle item_date'>出发日期：{{item.date}}</view>
+<view class='item_ntitle item_date'>创建时间: {{item.time}}</view>
+<view class='item_num'>
+      <!-- <view class='num_action' bindtap='reduce_num'><image src='../../images/icon_reduce.png'></image></view>
+      <view class='select_num'>1</view>
+      <view class='num_action' bindtap='add_num'><image src='../../images/icon_add.png'></image></view> -->
+      <view class='item_price'>合计：￥{{item.price}}</view>
+
+</view>
+</view>
+</view>
+
+</view>
+
+<view class='cart_aciton' hidden='{{!hasUser}}'>
+<view class='box1'>
+<image src="{{selectAllStatus?'../../images/icon_checked.png':'../../images/icon_check.png'}}" bindtap='selectAll'></image>
+<text>全选</text>
+</view>
+<view class='box2'>
+<text class='txt'>总金额：<text class='total_price'>￥{{totalPrice}}</text></text>
+</view>
+<view class='box3'>
+<view class='btn_buy' bindtap='pay'>马上结算</view>
+</view>
+</view>
+
+</view>

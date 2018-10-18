@@ -1,0 +1,172 @@
+page {
+  background: rgba(242, 243, 246,1);
+  width: 100%;
+  font-family: "微软雅黑";
+}
+
+.container {
+  padding: 0px;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+.item{
+  width: 100%;
+  margin-top: 10px;
+}
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 5px;
+  flex-direction: column;
+}
+.section1{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  align-items: center;
+}
+.section1 image{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+.section1 text{
+  font-size: 14px;
+  margin-left: 5px;
+}
+.section2{
+  width: 100%;
+  height: 100px;
+  background: rgb(250, 250, 250);
+  display: flex;
+  flex-direction: row;
+}
+.item_img{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+}
+.item_img image{
+  width: 100px;
+  height: 100px;
+}
+.item_body{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+}
+.item_title{
+  font-size: 15px;
+  font-weight: 600;
+}
+.item_ntitle{
+  font-size: 13px;
+  color: rgb(50, 40, 49);
+  margin-top: 5px;
+}
+.item_price{
+  font-size: 14px;
+  display: flex;
+  margin-top: 6px;
+  font-weight: bold;
+  justify-content: flex-end;
+}
+.item_num{
+  font-size: 14px;
+  display: flex;
+  margin-top: 2px;
+  font-weight: bold;
+  justify-content: flex-end;
+}
+.section3{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.area{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background: #fff;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10px;
+  justify-content: space-between;
+}
+.area_name{
+  font-size: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+.area_value{
+  font-size: 15px;
+  display: flex;
+  margin-right: 20px;
+  justify-content: flex-end;
+  color:gray;
+}
+
+.extra{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background: #fff;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 10px;
+  padding-right: 20px;
+  justify-content: space-between;
+}
+.extra_value{
+  width: 60%;
+  font-size: 15px;
+  color:gray;
+  margin-right: 20px;
+  word-break: break-all;
+}
+
+.area_price{
+  color: red;
+  font-weight: bold;
+}
+
+.btn_pay{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.btn_pay text{
+  font-weight: bold;
+}
+.line2{
+  width: 90%;
+  height: 1px;
+  margin-left: 12%;
+  background: #fff;
+  border-bottom: 1px solid rgba(243, 243, 243,1);
+}
+.line{
+  width: 78%;
+  height: 1px;
+  margin-left: 20%;
+  background: #fff;
+  border-bottom: 1px solid rgba(243, 243, 243,1);
+}

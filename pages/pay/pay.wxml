@@ -1,0 +1,50 @@
+<view class="container">
+<view class='content'>
+<view class='section1'>
+<image src='../../images/icon_shop.png'></image>
+<text>想旅行</text>
+</view>
+<view class='section2'>
+<view class='item_img'>
+<image src="{{item_route_img}}"></image>
+</view>
+<view class='item_body'>
+<text class='item_title'>{{item_route_name}}</text>
+<text class='item_ntitle'>{{item_date}} 全款</text>
+<text class='item_price'>￥{{item_price}}</text>
+<text class='item_num'>x {{item_num}}</text>
+</view>
+</view>
+
+</view>
+
+<view class='section3'>
+<view class='area'>
+<text class='area_name'>合计</text>
+<text class='area_value area_price'>￥{{item_total}}</text>
+</view>
+<view class='line2'></view>
+<view class='area'>
+<text class='area_name'>姓名</text>
+<text class='area_value'>{{item_name}}</text>
+</view>
+<view class='line2'></view>
+<view class='area'>
+<text class='area_name'>电话</text>
+<text class='area_value'>{{item_phone}}</text>
+</view>
+<view class='line2'></view>
+<view class='area'>
+<text class='area_name'>身份证号</text>
+<text class='area_value'>{{item_cardId}}</text>
+</view>
+<view class='line'></view>
+<view class='extra'>
+<text class='area_name'>备注信息</text>
+<text class='extra_value'>{{item_extra}}</text>
+</view>
+</view>
+
+<view class='btn_pay' bindtap='payAction' data-fee="{{item_total}}">去支付  <text>￥{{item_total}}</text>  元</view>
+
+</view>

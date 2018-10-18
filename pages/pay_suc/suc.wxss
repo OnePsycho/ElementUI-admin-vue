@@ -1,0 +1,46 @@
+page {
+  background: #fff;
+  width: 100%;
+  font-family: "微软雅黑";
+}
+
+.container {
+  padding: 0px;
+  overflow: hidden;
+  padding-bottom: 80px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.container image{
+  width: 80px;
+  height: 80px;
+}
+.t1{
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+  margin: 10px;
+}
+.t2{
+  font-size: 14px;
+  color: rgb(137, 137, 137);
+  width: 60%;
+  text-align: center;
+}
+
+.btn{
+  width: 200px;
+  height: 40px;
+  background: red;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 10px;
+}

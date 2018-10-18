@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="userinfo">
+     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+      <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block> 
+  </view>
+
+  <view class='menu_row'>
+  <view class='menu_row_item' bindtap='jumpToOrders'>
+  <image src='../../images/icon_wait_pay.png'></image>
+  <text>待付款</text>
+  </view>
+    <view class='menu_row_item'  bindtap='jumpToCarts'>
+  <image src='../../images/cart.png' ></image>
+  <text>购物车</text>
+  </view>
+    <view class='menu_row_item'  bindtap='jumpToCollect'>
+  <image src='../../images/icon_collect.png'></image>
+  <text>已收藏</text>
+  </view>
+    <view class='menu_row_item'  bindtap='jumpToCoupon'>
+  <image src='../../images/icon_youhui.png'></image>
+  <text>优惠券</text>
+  </view>
+  </view>
+
+  <view class='menu'>
+   <view class='menu_item' bindtap='jumpToNews'>
+    <image src='../../images/icon_new.png' class='menu_item_icon'></image>
+  <text>我的消息</text>
+  <image src='../../images/icon_arrow.png' class='menu_item_arrow'></image>
+  </view> 
+    <view class='menu_item' bindtap='jumpToMyScore'>
+    <image src='../../images/icon_score.png' class='menu_item_icon'></image>
+  <text>我的积分</text>
+  <image src='../../images/icon_arrow.png' class='menu_item_arrow'></image>
+  </view>
+      <view class='menu_item' bindtap='jumpToOrders'>
+    <image src='../../images/icon_wait_send.png' class='menu_item_icon'></image>
+  <text>全部订单</text>
+  <image src='../../images/icon_arrow.png' class='menu_item_arrow'></image>
+  </view>
+    <view class='menu_item' bindtap='jumpToAboutUs'>
+  <image src='../../images/icon_us.png' class='menu_item_icon'></image>
+  <text>关于我们</text>
+  <image src='../../images/icon_arrow.png' class='menu_item_arrow'></image>
+  </view>
+  </view>
+</view>
